@@ -332,23 +332,18 @@ footer {
   .navbar__top {
     display: flex;
     justify-content: space-between;
-    padding: 40px 1.5rem;
+    padding: 40px 20px;
   }
 
   .article__above__gallery {
-    padding: 0px;
+    padding: 0px 20px;
     margin-bottom: var(--spacing-newcontent);
   }
 
   .section__gallery {
     display: flex;
     flex-direction: column;
-    padding: 0px;
-
-    & img {
-      margin-bottom: 1.25rem;
-      min-width: 400px;
-    }
+    padding: 0px 10px;
   }
 
   .image__text {
