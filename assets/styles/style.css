@@ -1,0 +1,372 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin and padding
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'RobotoBold';
+  src: url(../fonts/Roboto/Roboto-Bold.ttf);
+  font-weight: 700;
+  color: red;
+}
+
+:root {
+  --clr-black: #000;
+  --footer-clr: #afafaf;
+  --bg-clr: #f5f5f5;
+
+  /* FONTSIZE */
+  --font-small: 0.75rem;
+  --font-medium: 1rem;
+  --font-large: 1.5rem;
+  --font-xlarge: 2.5rem;
+
+  /* SPACING */
+  --content-sidespacing: 9.375rem;
+  --base-spacing: 3rem;
+  --spacing-newcontent: 7rem;
+
+  /* BREAKPOINTS */
+  --bp-small: 25.875rem; /* iPhone XR */
+  --bp-medium: 51.25rem; /* iPad Air */
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+  color: var(--clr-black);
+}
+
+body {
+  background-color: var(--bg-clr);
+  font-family: 'Roboto';
+}
+
+.navbar__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px var(--content-sidespacing);
+  margin-bottom: var(--spacing-newcontent);
+}
+
+/* burger-menu */
+
+.hamburger {
+  height: 3px;
+  width: 25px;
+  background-color: var(--clr-black);
+  border-radius: 4px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.hamburger::before {
+  height: 3px;
+  width: 25px;
+  background-color: var(--clr-black);
+  position: absolute;
+  border-radius: 4px;
+  top: -8px;
+  content: ' ';
+}
+
+.hamburger::after {
+  height: 3px;
+  width: 25px;
+  background-color: var(--clr-black);
+  position: absolute;
+  border-radius: 4px;
+  top: 8px;
+  content: ' ';
+}
+
+.article__above__gallery {
+  padding: 0 var(--content-sidespacing);
+  padding-bottom: var(--spacing-newcontent);
+
+  > h1 {
+    font-size: var(--font-xlarge);
+    max-width: 70%;
+    padding-bottom: var(--base-spacing);
+    line-height: 2.5rem;
+  }
+
+  > p {
+    font-size: var(--font-medium);
+    max-width: 70%;
+  }
+}
+
+.section__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 0 var(--content-sidespacing);
+}
+
+.section__gallery img {
+  margin-bottom: 15px;
+  text-align: center;
+  object-fit: contain;
+  object-position: center;
+
+  &:hover {
+    filter: grayscale(100%);
+  }
+}
+
+.image__text {
+  opacity: 0%;
+}
+
+footer {
+  background-color: var(--footer-clr);
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.footer__infos {
+  /* display: grid;
+  grid-template-columns: repeat(9, 1fr); */
+  display: flex;
+  justify-content: space-between;
+  padding-right: 400px;
+  padding-left: var(--content-sidespacing);
+  padding-top: var(--spacing-newcontent);
+  padding-bottom: var(--base-spacing);
+}
+
+.form__container {
+  max-width: 35%;
+  margin: 0 auto;
+
+  & h2 {
+    text-align: center;
+    font-family: 'RobotoBold';
+    font-weight: 700;
+    font-size: var(--font-xlarge);
+  }
+}
+
+.footer__form {
+  display: flex;
+  flex-direction: column;
+
+  > label {
+    margin-bottom: 5px;
+  }
+
+  > #message {
+    margin-bottom: 20px;
+  }
+}
+
+#email,
+#name {
+  height: 5vh;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1.25rem;
+}
+
+.btn__submit {
+  margin-bottom: var(--spacing-newcontent);
+  border-radius: 5px;
+  border: none;
+  height: 5vh;
+}
+
+/* #iPad Breakpoint */
+
+@media screen and (max-width: 820px) {
+  .navbar__top {
+    padding: 40px 60px;
+    max-width: 820px;
+  }
+
+  .article__above__gallery {
+    padding: 0px 60px;
+    margin-bottom: var(--spacing-newcontent);
+  }
+
+  h1 {
+    max-width: 50%;
+    margin-bottom: var(--base-spacing);
+  }
+
+  .article__above__gallery p {
+    max-width: 60%;
+  }
+
+  .section__gallery {
+    display: flex;
+    flex-direction: column;
+    max-width: 820px;
+    padding: 0px 60px;
+  }
+
+  .section__gallery img {
+    width: 820px;
+  }
+
+  footer {
+    padding: 50px 60px;
+    margin: 0;
+    max-width: 820px;
+  }
+
+  .footer__infos {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+    > ul {
+      padding-bottom: var(--base-spacing);
+    }
+  }
+
+  .form__container {
+    min-width: 720px;
+  }
+}
+
+/* #iPhone Breakpoint */
+
+@media screen and (max-width: 414px) {
+  .navbar__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 1.5rem;
+  }
+
+  .article__above__gallery {
+    padding: 0px;
+    margin-bottom: var(--spacing-newcontent);
+  }
+
+  .section__gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+
+    & img {
+      margin-bottom: 1.25rem;
+      min-width: 400px;
+    }
+  }
+
+  .image__text {
+    opacity: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  footer {
+    padding: 50px 0.625rem;
+    margin: 0;
+    max-width: 414px;
+  }
+
+  .footer__infos {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    padding-top: 50px;
+  }
+
+  ul {
+    padding-bottom: 1.25rem;
+  }
+
+  .form__container {
+    min-width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #message {
+    margin-bottom: 20px;
+  }
+}
