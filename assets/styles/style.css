@@ -348,8 +348,12 @@ footer {
   }
 
   .image__text {
-    opacity: 100%;
-    margin-bottom: 2.5rem;
+    display: block;
+    position: relative;
+    color: #000;
+    padding-top: 15px;
+    text-align: left;
+    font-size: 1rem;
   }
 
   footer {
