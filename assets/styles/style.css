@@ -179,7 +179,6 @@ body {
 
 .section__gallery {
   display: grid;
-  gap: 15px;
   grid-template-columns: repeat(3, 1fr);
   padding: 0 var(--content-sidespacing);
 }
@@ -187,6 +186,7 @@ body {
 .image__container {
   display: inline-block;
   position: relative;
+  margin: 10px;
 }
 
 .image__text {
@@ -202,7 +202,6 @@ body {
 }
 
 .section__gallery img {
-  margin-bottom: 15px;
   object-fit: contain;
   object-position: center;
   text-align: center;
@@ -351,9 +350,9 @@ footer {
     color: #000;
     display: block;
     font-size: 1rem;
-    padding-top: 15px;
     position: relative;
     text-align: left;
+    margin-top: 15px;
   }
 
   footer {
